@@ -1,0 +1,22 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 21, 2022, 9:43:27 PM
+    Author     : erics
+*/
+
+.contenido-nosotros {
+
+    @include tablet {
+        @include grid(2, 2rem);
+    }
+}
+
+.texto-nosotros blockquote {
+    font-weight: $black;
+    font-size: 2.2rem;
+    margin: 3rem 0 0 0;
+    padding-left: 1rem 0 3rem 0;
+}
