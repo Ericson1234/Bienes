@@ -13,20 +13,20 @@ const cache = require('gulp-cache');
 const webp = require('gulp-webp');
 
 const paths = {
-    scss: 'src/scss/**/*.scss',
-    js: 'src/js/**/*.js',
-    imagenes: 'src/img/**/*'
+    css: 'static/css/**/*.css',
+    js: 'static/js/**/*.js',
+    imagenes: 'static/img/**/*'
 }
 
 // css es una función que se puede llamar automaticamente
 function css() {
-    return src(paths.scss)
+    return src(paths.css)
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
         // .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
-        .pipe( dest('./build/css') );
+        .pipe( dest('./static/css') );
 }
 
 
@@ -43,20 +43,20 @@ function javascript() {
 function imagenes() {
     return src(paths.imagenes)
         .pipe(cache(imagemin({ optimizationLevel: 3})))
-        .pipe(dest('build/img'))
+        .pipe(dest('static/img'))
         .pipe(notify({ message: 'Imagen Completada'}));
 }
 
 function versionWebp() {
     return src(paths.imagenes)
         .pipe( webp() )
-        .pipe(dest('build/img'))
+        .pipe(dest('static/img'))
         .pipe(notify({ message: 'Imagen Completada'}));
 }
 
 
 function watchArchivos() {
-    watch( paths.scss, css );
+    watch( paths.css, css );
     watch( paths.js, javascript );
     watch( paths.imagenes, imagenes );
     watch( paths.imagenes, versionWebp );

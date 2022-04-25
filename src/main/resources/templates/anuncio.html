@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    
-    <header class="header">
+    <head 
+        th:replace="plantilla/template::head">
+
+        <title>Bienes Raices</title>
+        <link rel="stylesheet" href="../static/css/base/app.css">
+    </head>
+    <body>
+
+        <header class="header">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo de Bienes Raices">
+                <a href="index.html">
+                    <img src="../static/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
                 <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
+                    <img src="../static/img/barras.svg" alt="icono menu responsive">
                 </div>
 
                 <div class="derecha">
-                    <img class="dark-mode-boton" src="build/img/dark-mode.svg">
+                    <img class="dark-mode-boton" src="../static/img/dark-mode.svg">
                     <nav class="navegacion">
                         <a href="nosotros.html">Nosotros</a>
                         <a href="anuncios.html">Anuncios</a>
@@ -37,39 +33,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
     </header>
 
-    <main class="contenedor seccion contenido-centrado">
-        <h1>Casa en Venta frente al bosque</h1>
+        <main class="contenedor seccion contenido-centrado">
+            <h1>Casa en Venta frente al bosque</h1>
+            <div>
+                <img src="../static/img/destacada.jpg" alt="Casa frente al bosque">
+            </div>
+            <!-- <picture>
+                 <source 
+                     srcset="../static/img/destacada.webp" type="image/webp">
+                 <source srcset="../static/img/destacada.jpg" type="image/jpg">
+                 <img loading="lazy" src="build/img/destacada.jpg" alt="imagen de la propiedad">
+             </picture> -->
 
-        <picture>
-            <source srcset="build/img/destacada.webp" type="image/webp">
-            <source srcset="build/img/destacada.jpg" type="image/jpeg">
-            <img loading="lazy" src="build/img/destacada.jpg" alt="imagen de la propiedad">
-        </picture>
+            <div class="resumen-propiedad">
+                <p class="precio">$3,000,000</p>
+                <ul class="iconos-caracteristicas">
+                    <li>
+                        <img class="icono" loading="lazy" src="../static/img/icono_wc.svg" alt="icono wc">
+                            <p>4</p>
+                    </li>
+                    <li>
+                        <img class="icono" loading="lazy" src="../static/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                            <p>4</p>
+                    </li>
+                    <li>
+                        <img class="icono"  loading="lazy" src="../static/img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>6</p>
+                    </li>
+                </ul>
 
-        <div class="resumen-propiedad">
-            <p class="precio">$3,000,000</p>
-            <ul class="iconos-caracteristicas">
-                <li>
-                    <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                    <p>3</p>
-                </li>
-                <li>
-                    <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                    <p>3</p>
-                </li>
-                <li>
-                    <img class="icono"  loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                    <p>4</p>
-                </li>
-            </ul>
+                <p>Esta casa frente al bosque con una vista impresionante puede ser suya con un monto de $3,000,000; cuenta con un grandioso espacio para la imprementación de varias actividades con sus seres queridos.</p>
 
-            <p>Proin consequat viverra sapien, malesuada tempor tortor feugiat vitae. In dictum felis et nunc aliquet molestie. Proin tristique commodo felis, sed auctor elit auctor pulvinar. Nunc porta, nibh quis convallis sollicitudin, arcu nisl semper mi, vitae sagittis lorem dolor non risus. Vivamus accumsan maximus est, eu mollis mi. Proin id nisl vel odio semper hendrerit. Nunc porta in justo finibus tempor. Suspendisse lobortis dolor quis elit suscipit molestie. Sed condimentum, erat at tempor finibus, urna nisi fermentum est, a dignissim nisi libero vel est. Donec et imperdiet augue. Curabitur malesuada sodales congue. Suspendisse potenti. Ut sit amet convallis nisi.</p>
+                <p>Dicha propiedad contiene 4 servicio sanitarios muy amplios,donde se encuentran 2 en la primera planta y los restantes en la segunda planta.
+                    De igual forma tiene parqueo para 4 vehículos y 6 habitaciones, 3 en el primer piso y las restantes en el segundo piso.</p>
+            </div>
+        </main>
 
-            <p>Aliquam lectus magna, luctus vel gravida nec, iaculis ut augue. Praesent ac enim lorem. Quisque ac dignissim sem, non condimentum orci. Morbi a iaculis neque, ac euismod felis. Fusce augue quam, fermentum sed turpis nec, hendrerit dapibus ante. Cras mattis laoreet nibh, quis tincidunt odio fermentum vel. Nulla facilisi.</p>
-        </div>
-    </main>
-
-    <footer class="footer seccion">
+          <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
                 <a href="nosotros.html">Nosotros</a>
@@ -81,7 +81,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <p class="copyright">Todos los derechos Reservados 2022 &copy;</p>
     </footer>
+        
+        
+       
 
-    <script src="build/js/bundle.min.js"></script>
-</body>
+        <script src="../static/js/bundle.min.js"></script>
+    </body>
 </html>
