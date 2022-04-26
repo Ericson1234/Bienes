@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author erics
  */
 @Controller
-public class LoginController {
+public class IndexController {
     
-    @GetMapping({"/","/login"})
-    public String index(){
-        return "login";
+    @GetMapping({"/index"})
+    public String ingreso(){
+        return "index";
     }
 
 }

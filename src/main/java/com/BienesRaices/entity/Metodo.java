@@ -23,6 +23,9 @@ public class Metodo implements Serializable{
     
     private String id;
     private String nombre;
+    private int mes;
+    private int ano;
+    private int ccv;
 
     public String getId() {
         return id;
@@ -38,6 +41,30 @@ public class Metodo implements Serializable{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public int getCcv() {
+        return ccv;
+    }
+
+    public void setCcv(int ccv) {
+        this.ccv = ccv;
     }
     
     
